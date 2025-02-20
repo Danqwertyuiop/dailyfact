@@ -1,12 +1,3 @@
 {
-  "version": 2,
-  "rewrites": [
-    { "source": "/", "destination": "/fact.html" }
-  ],
-  "builds": [
-    { "src": "api/fact.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/api/fact", "dest": "/api/fact.js" }
-  ]
+    "rewrites": [{ "source": "/", "destination": "/fact.html" }],
 }
