@@ -1,14 +1,16 @@
-function fetchFact() {
-    fetch("/api/fact") // Ensure this matches the API route
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("randomText").innerText = data.fact;
-        })
-        .catch(error => console.error("Error fetching fact:", error));
+async function fetchFact() {
+    try {
+        const response = await fetch("http://localhost:3000/fact");
+        const data = await response.json();
+        document.getElementById("randomText").innerText = data.fact;
+    } catch (error) {
+        console.error("Error fetching fact:", error);
+        document.getElementById("randomText").innerText = "Failed to load fact.";
+    }
 }
 
-// Fetch a new fact every second
-setInterval(fetchFact, 1000);
-
-// Fetch one fact immediately on page load
+// Fetch fact on page load
 fetchFact();
+
+// Update fact every 60 seconds (60000 ms)
+setInterval(fetchFact, 60000);
