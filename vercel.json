@@ -1,6 +1,6 @@
 {
     "rewrites": [{ "source": "/", "destination": "/fact.html" }],
     "functions": {
-        "api/fact.js": { "runtime": "nodejs18.x" }
+        "api/fact.js": { "runtime": "nodejs22.x" }
     }
 }
