@@ -1,3 +1,6 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/fact.html" }]
+    "rewrites": [{ "source": "/", "destination": "/fact.html" }],
+    "functions": {
+        "api/fact.js": { "runtime": "nodejs18.x" }
+    }
 }
