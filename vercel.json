@@ -1,6 +1,12 @@
 {
-    "rewrites": [{ "source": "/", "destination": "/fact.html" }],
-    "functions": {
-        "api/fact.js": { "runtime": "nodejs: 22.x" }
-    }
+  "version": 2,
+  "rewrites": [
+    { "source": "/", "destination": "/fact.html" }
+  ],
+  "builds": [
+    { "src": "api/fact.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/fact", "dest": "/api/fact.js" }
+  ]
 }
