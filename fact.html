@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+.background {
+  background-image: url('https://i.pinimg.com/originals/47/7a/cb/477acbb623ea51dba83590443ad02924.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  backdrop-filter: blur(10px);
+  background-position: center center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 110%;
+  height: 110%;
+  z-index: -1;
+  overflow: hidden;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fact of the Day</title>
 </head>
-<body style="background-color:#3e3d3c;">
+<body>
+
+<div class = "background"></div>
+
     <h1 style="font-family:Verdana;font-size:50px;text-align:center;color:white;">Fact of the Day</h1>
-    <img src="placeholder.png" alt="Placeholder Image" style="width:350px;height:350px;display:block;margin-left:auto;margin-right:auto">
     
     <p id="randomText" style="text-align:center;color:white;font-family:Courier New"></p>
-    <p id="string1" style="text-align:center;color:white;font-family:Courier New"></p>
+    <p id="date" style="text-align:center;color:white;font-family:Courier New"></p>
 
-    <script src="test.js"></script> 
+<script>
+const d = new Date();
+let day = d.getDate();
+let month = d.getMonth() + 1;
+let year = d.getFullYear();
+document.getElementById("date").innerHTML = `Date: ${day}/${month}/${year}`;
+</script>
+
+<script src="test.js"></script> 
+	
 </body>
+
 </html>
