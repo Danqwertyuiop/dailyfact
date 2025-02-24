@@ -1,2 +1,0 @@
-"# dailyfact" 
-"# dailyfact" 
